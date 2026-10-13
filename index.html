@@ -1,0 +1,265 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Abdoulfatah Abdallah | Portfolio</title>
+  <style>
+    /* RESET & BASE STYLES */
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+    body {
+      font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
+      background-color: #0f172a;
+      color: #f8fafc;
+      line-height: 1.6;
+    }
+    a {
+      color: #38bdf8;
+      text-decoration: none;
+    }
+    a:hover {
+      text-decoration: underline;
+    }
+
+    /* HEADER & NAV */
+    header {
+      background-color: #1e293b;
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      border-bottom: 1px solid #334155;
+      padding: 1rem 2rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    .logo {
+      font-weight: bold;
+      font-size: 1.25rem;
+      color: #38bdf8;
+    }
+    nav a {
+      margin-left: 1.5rem;
+      color: #cbd5e1;
+      font-size: 0.95rem;
+    }
+
+    /* CONTAINER */
+    .container {
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 2rem;
+    }
+
+    /* HERO SECTION */
+    .hero {
+      padding: 4rem 0;
+      border-bottom: 1px solid #334155;
+    }
+    .badge {
+      display: inline-block;
+      background: #0284c7;
+      color: #fff;
+      padding: 0.25rem 0.75rem;
+      border-radius: 9999px;
+      font-size: 0.85rem;
+      margin-bottom: 1rem;
+    }
+    .hero h1 {
+      font-size: 2.75rem;
+      margin-bottom: 0.5rem;
+      color: #f8fafc;
+    }
+    .hero h2 {
+      font-size: 1.35rem;
+      color: #94a3b8;
+      font-weight: 400;
+      margin-bottom: 1.5rem;
+    }
+    .hero p {
+      max-width: 700px;
+      color: #cbd5e1;
+      font-size: 1.1rem;
+      margin-bottom: 2rem;
+    }
+    .btn {
+      display: inline-block;
+      background-color: #0284c7;
+      color: white;
+      padding: 0.75rem 1.5rem;
+      border-radius: 6px;
+      font-weight: 600;
+    }
+    .btn:hover {
+      background-color: #0369a1;
+      text-decoration: none;
+    }
+
+    /* SECTIONS */
+    section {
+      padding: 3rem 0;
+      border-bottom: 1px solid #334155;
+    }
+    section h3 {
+      font-size: 1.75rem;
+      margin-bottom: 1.5rem;
+      color: #38bdf8;
+    }
+
+    /* CARDS & GRID */
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 1.5rem;
+    }
+    .card {
+      background-color: #1e293b;
+      padding: 1.5rem;
+      border-radius: 8px;
+      border: 1px solid #334155;
+    }
+    .card h4 {
+      font-size: 1.2rem;
+      color: #f8fafc;
+      margin-bottom: 0.5rem;
+    }
+    .card .date {
+      font-size: 0.85rem;
+      color: #38bdf8;
+      margin-bottom: 0.75rem;
+    }
+    .card p {
+      color: #cbd5e1;
+      font-size: 0.95rem;
+    }
+
+    /* SKILLS BUTTONS */
+    .filter-btn {
+      background: #1e293b;
+      border: 1px solid #334155;
+      color: #cbd5e1;
+      padding: 0.5rem 1rem;
+      border-radius: 6px;
+      cursor: pointer;
+      margin-right: 0.5rem;
+      margin-bottom: 1rem;
+    }
+    .filter-btn.active, .filter-btn:hover {
+      background-color: #0284c7;
+      color: white;
+      border-color: #0284c7;
+    }
+
+    /* FOOTER */
+    footer {
+      text-align: center;
+      padding: 2rem;
+      color: #64748b;
+      font-size: 0.9rem;
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <div class="logo">A. ABDALLAH.dev</div>
+    <nav>
+      <a href="#about">À propos</a>
+      <a href="#skills">Compétences</a>
+      <a href="#experiences">Expériences</a>
+      <a href="#contact">Contact</a>
+    </nav>
+  </header>
+
+  <div class="container">
+    <section class="hero" id="about">
+      <span class="badge">En auto-formation Data Engineering (2025)</span>
+      <h1>Abdoulfatah Abdallah</h1>
+      <h2>Informaticien & Spécialiste Données</h2>
+      <p>Diplômé en informatique (Master 1 ISI), je dispose d'un parcours polyvalent combinant le développement applicatif, la comptabilité/gestion et la gestion d'infrastructures. Je développe actuellement mes compétences en <strong>Data Engineering</strong>.</p>
+      <a href="#contact" class="btn">Me contacter</a>
+    </section>
+
+    <section id="skills">
+      <h3>Compétences Techniques</h3>
+      <div>
+        <button class="filter-btn active" onclick="filterSkills('all')">Tout</button>
+        <button class="filter-btn" onclick="filterSkills('data')">Data & BDD</button>
+        <button class="filter-btn" onclick="filterSkills('dev')">Développement</button>
+        <button class="filter-btn" onclick="filterSkills('gestion')">Gestion & Système</button>
+      </div>
+
+      <div class="grid" style="margin-top: 1.5rem;">
+        <div class="card skill-item data">
+          <h4>Data Engineering & BDD</h4>
+          <p>Architectures ETL/ELT, SQL avancé, MySQL, MongoDB, Modélisation de données.</p>
+        </div>
+        <div class="card skill-item dev">
+          <h4>Développement & Web</h4>
+          <p>Python, Java, C++, C, HTML5, CSS3, JavaScript, PHP.</p>
+        </div>
+        <div class="card skill-item gestion">
+          <h4>Gestion & Comptabilité</h4>
+          <p>Comptabilité d'ASBL (2 ans), gestion de stock, inventaire informatique, méthodologies Agile/Scrum.</p>
+        </div>
+      </div>
+    </section>
+
+    <section id="experiences">
+      <h3>Expériences Professionnelles</h3>
+      <div class="grid">
+        <div class="card">
+          <h4>Comptable ASBL</h4>
+          <div class="date">2023 - Présent (2 ans)</div>
+          <p>Tenue de la comptabilité générale, suivi budgétaire, gestion administrative et conformité réglementaire.</p>
+        </div>
+        <div class="card">
+          <h4>Agent de tri (Intérim)</h4>
+          <div class="date">2023 - 2025 | bpost</div>
+          <p>Tri et traitement logistique des envois, organisation et respect des cadences d'expédition.</p>
+        </div>
+        <div class="card">
+          <h4>Stage Développeur Logiciel</h4>
+          <div class="date">09/2019 - 11/2019 | Technofutur TIC</div>
+          <p>Développement en Python et Java pour logiciels de gestion et contrôle de vitesse.</p>
+        </div>
+      </div>
+    </section>
+
+    <section id="contact">
+      <h3>Contact</h3>
+      <div class="card">
+        <p><strong>Email :</strong> abdifatahbah@gmail.com</p>
+        <p><strong>Localisation :</strong> Belgique</p>
+        <p><strong>Langues :</strong> Français (Bilingue), Anglais, Arabe, Somali, Néerlandais (Débutant)</p>
+      </div>
+    </section>
+  </div>
+
+  <footer>
+    &copy; 2026 Abdoulfatah Abdallah. Tous droits réservés.
+  </footer>
+
+  <script>
+    function filterSkills(category) {
+      const items = document.querySelectorAll('.skill-item');
+      const buttons = document.querySelectorAll('.filter-btn');
+
+      buttons.forEach(btn => btn.classList.remove('active'));
+      event.target.classList.add('active');
+
+      items.forEach(item => {
+        if (category === 'all' || item.classList.contains(category)) {
+          item.style.display = 'block';
+        } else {
+          item.style.display = 'none';
+        }
+      });
+    }
+  </script>
+</body>
+</html>
